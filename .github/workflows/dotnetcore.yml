@@ -50,19 +50,19 @@ jobs:
     - name: List Dependencies
       run: dotnet list package > dependencies.txt
       shell: bash
-    - name: Collect Dependencies
-      uses: actions/upload-artifact@v2
-      with:
-        name: Dependencies
-        path: dependencies.txt
+    # - name: Collect Dependencies
+    #   uses: actions/upload-artifact@v4.6.2
+    #   with:
+    #     name: Dependencies
+    #     path: dependencies.txt
     - name: List Dependency Updates
       run: dotnet list package --outdated > dependencyUpdates.txt
       shell: bash
-    - name: Collect Dependency Updates
-      uses: actions/upload-artifact@v2
-      with:
-        name: Dependencies Updates
-        path: dependencyUpdates.txt
+    # - name: Collect Dependency Updates
+    #   uses: actions/upload-artifact@v4.6.2
+    #   with:
+    #     name: Dependencies Updates
+    #     path: dependencyUpdates.txt
     - name: Test
       run: dotnet test -l:trx
       shell: bash
